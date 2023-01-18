@@ -33,7 +33,7 @@
       }
     },
     "/api/auth/register": {
-      "get": {
+      "post": {
         "summary": "Registration",
         "description": "You can register using (email, password) email should be valid and exist (hunter.co verification integrated)",
         "requestBody": {
@@ -102,7 +102,7 @@
       }
     },
     "/api/auth/login": {
-      "get": {
+      "post": {
         "summary": "Login",
         "description": "You can login using (email, password) access tokens stored in cookies",
         "requestBody": {
@@ -281,7 +281,7 @@
       }
     },
     "/api/posts/get_by_id": {
-      "get": {
+      "post": {
         "summary": "Get post by id",
         "description": "Get post by id",
         "requestBody": {
