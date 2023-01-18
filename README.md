@@ -1,4 +1,4 @@
-# Fast_API_Test
+# Simple Blog API
 Any  errors can be sent to me in telegram https://t.me/Gynshu 
 Created according to "Test Task for Webtronics FastAPI candidate"
 ## Installation
