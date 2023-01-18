@@ -1,0 +1,53 @@
+version: '3'
+services:
+  rdb:
+    image: redis:alpine
+    container_name: rdb
+    restart: always
+    ports:
+      - 6379:6379
+    networks:
+        - uni
+    volumes:
+      - ./data:/data
+    command: redis-server --appendonly yes
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    restart: on-failure
+    env_file:
+      - .env
+    networks:
+      - uni
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+    volumes:
+      - mongo:/data/db
+    ports:
+      - '27017:27017'
+  app:
+    container_name: app
+    build:
+        context: .
+        dockerfile: Dockerfile
+    restart: on-failure
+    env_file:
+      - .env
+    networks:
+      - uni
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+    ports:
+      - '8000:80'
+    command: bash -c "uvicorn main:app --host 0.0.0.0 --port 80"
+    depends_on:
+      - mongo
+      - rdb
+volumes:
+  mongo:
+networks:
+    uni:

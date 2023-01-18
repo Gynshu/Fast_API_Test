@@ -1,0 +1,7 @@
+# remove ide files
+./.idea
+# remove git files
+*.git
+__pycache__
+venv/
+*.key
