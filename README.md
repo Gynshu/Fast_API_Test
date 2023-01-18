@@ -23,5 +23,7 @@ Stack:<br />
   Just noticed "Technology Requirements" for Db you requested relational DBs, sorry i have already made with Mongo, becouse its relatively new for me I wanted to try it)
     I like postgres more and I always use it<br />
   <br /><br />Swagger for documentation ( simplem <b>index.html and swagger.json</b>)<br />
+User this link to export documentation</br>
+https://app.swaggerhub.com/apis/Gynshu/Fast_api_test/1.0.0
 Also postman collection for testing<br />
 https://api.postman.com/collections/22312746-66ebe30b-f5f2-4d60-9343-8c69664cb003?access_key=PMAT-01GQ1SKHJN9550JNCWRWAGZGHE
