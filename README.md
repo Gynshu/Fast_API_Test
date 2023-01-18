@@ -4,7 +4,7 @@ Created according to "Test Task for Webtronics FastAPI candidate"
 ## Installation
 <code>docker-compose up</code>
 server runs at http://localhost:8000
-
+You should use your own hanter.io EMAIL_VERIFICATION_KEY in .env file
 Stack:<br />
   Python FastAPI<br />
   JWT<br />
