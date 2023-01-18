@@ -5,6 +5,14 @@ Created according to "Test Task for Webtronics FastAPI candidate"
 <code>docker-compose up</code>
 server runs at http://localhost:8000<br /><br />
 You should use your own hanter.io  <b>EMAIL_VERIFICATION_KEY </b> in .env file<br /><br />
+Or just comment this part of code at routs/auth.py <br/>
+@router.post('/register'...
+```   
+else:
+      if not tools.verify_email(payload.email):
+          raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
+                              detail='Invalid email')
+```
 Stack:<br />
   Python <b>FastAPI</b><br />
   JWT<br />
