@@ -1,7 +1,7 @@
 # Fast_API_Test
 
 Created according to "Test Task for Webtronics FastAPI candidate"
-
+ 
 ## Installation
 <code>docker-compose up</code>
 server runs at http://localhost:8000
