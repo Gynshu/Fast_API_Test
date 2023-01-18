@@ -6,9 +6,10 @@ Created according to "Test Task for Webtronics FastAPI candidate"
 server runs at http://localhost:8000<br /><br />
 You should use your own hanter.io  <b>EMAIL_VERIFICATION_KEY </b> in .env file<br /><br />
 Stack:<br />
-  Python FastAPI<br />
+  Python <b>FastAPI</b><br />
   JWT<br />
   Oauth 2.0<br />
+  <b>Redis</b> for user actions cache<br />
   MongoDb for user managment <br />
   I like postgres more and I always use it<br /><br />
   Just noticed "Technology Requirements" for Db you requested relational DBs, sorry i have already made Mongo, becouse its relatively new for me I wanted to try it)
