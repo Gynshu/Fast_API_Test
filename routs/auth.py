@@ -22,10 +22,10 @@ async def create_user(payload: CreateUserSchema):
                             detail='Account already exist')
     # hunter.co Verification part
     # If user is not created yet, check email with hunter.io
-    # else:
-    #     if not tools.verify_email(payload.email):
-    #         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
-    #                             detail='Invalid email')
+    else:
+        if not tools.verify_email(payload.email):
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
+                                detail='Invalid email')
     #  Hash the password
     payload.password = tools.hash_password(payload.password)
     payload.email = payload.email.lower()
